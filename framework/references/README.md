@@ -48,7 +48,7 @@ Each category folder should have an `INDEX.md` — a one-screen overview of what
 
 `INDEX.md` is **generated per project, not copied from a template.** Every project has different architecture, business rules, and conventions, so a shared template would be either too generic to be useful or so opinionated it fights the project's reality.
 
-**How it gets populated:** the first time the `pre-work` or `pre-phase` skill runs in a new project, it reads each category's README, scans the repo for relevant artifacts (modules, schemas, existing docs), drafts an `INDEX.md`, and asks the user to confirm. Subsequent updates happen the same way — through a skill, with user confirmation, not by hand-editing.
+**How it gets populated:** the `session-start` skill checks for these files at every session open. The first time it runs in a new project, it detects the missing files, mentions them in the briefing, and offers to generate them. If you accept, it reads each category's README for shape guidance, scans the repo for relevant artifacts (modules, schemas, existing docs), drafts an `INDEX.md`, and asks for confirmation before writing. The offer repeats next session until the files exist; subsequent updates happen the same way — through a skill, with user confirmation, not by hand-editing.
 
 **Shape:**
 - 2–4 sentence summary of what this category covers in *this* project
