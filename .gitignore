@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Controls runtime artifacts
+# (these appear in projects that install claude-controls, not in this repo —
+#  listed here for safety if anyone dogfoods the framework on itself)
+.claude/logs/
+.claude/work-approved/
+.claude/context_snapshot.md
+project.config.json
+settings.local.json
