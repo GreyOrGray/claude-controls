@@ -1,5 +1,7 @@
 # Claude Controls — Install Guide
 
+> **This is a per-project install.** All files go into `<project-root>/.claude/`, **not** `~/.claude/` (the user-global Claude Code directory). Each project gets its own independent copy of the hooks, skills, references, templates, and `project.config.json`. Installing into a second project does not affect the first.
+
 ## For the Agent
 
 This document guides you through installing Claude Controls on a project. Read it fully before asking any questions. Then interview the user using the questions below, confirm all answers, write `project.config.json`, copy framework files, and verify the install.
@@ -110,17 +112,17 @@ If db_type is "none", set host/port/name/auth/username/production_patterns/test_
 
 ## Step 5: Copy Framework Files
 
-Copy the following to the project's `.claude/` directory:
+Copy the following to the **project's** `.claude/` directory (i.e. `<project-root>/.claude/`, *not* `~/.claude/`):
 
 ```
-framework/hooks/                 → .claude/hooks/
-framework/skills/                → .claude/skills/
-framework/references/            → .claude/references/
-framework/templates/             → .claude/templates/
-framework/settings_template.json → .claude/settings.local.json
+framework/hooks/                 → <project-root>/.claude/hooks/
+framework/skills/                → <project-root>/.claude/skills/
+framework/references/            → <project-root>/.claude/references/
+framework/templates/             → <project-root>/.claude/templates/
+framework/settings_template.json → <project-root>/.claude/settings.local.json
 ```
 
-If `.claude/` does not exist, create it. If any destination files already exist, ask the user before overwriting.
+If `<project-root>/.claude/` does not exist, create it. If any destination files already exist, ask the user before overwriting.
 
 ---
 

@@ -148,30 +148,38 @@ All project-specific values live in one file. Hooks and skills read this at runt
 
 ## File Layout (Installed)
 
-After running install, the project's `.claude/` directory looks like:
+After running install, the **project's** `.claude/` directory looks like the tree below. This is the project-local `.claude/` (e.g. `C:/MyProject/.claude/`), **not** the user-global `~/.claude/`. Each project that installs claude-controls gets its own independent copy — installing in a second project does not affect the first.
 
 ```
-.claude/
-  hooks/
-    session_init.py
-    bash_guard.py
-    file_guard.py
-    commit_guard.py
-    session_log.py
-    precompact.py
-  skills/
-    session-start/SKILL.md
-    pre-work/SKILL.md
-    commit-ready/SKILL.md
-    pre-phase/SKILL.md
-    document-phase/SKILL.md
-  references/
-    workflow/
-    standards/
-    architecture/
-    business-rules/
-  settings.local.json        ← hook wiring
-  project.config.json        ← project-specific values
+<project-root>/
+  .claude/
+    hooks/
+      session_init.py
+      bash_guard.py
+      file_guard.py
+      commit_guard.py
+      session_log.py
+      precompact.py
+      skill_eval.py
+    skills/
+      session-start/SKILL.md
+      pre-work/SKILL.md
+      commit-ready/SKILL.md
+      pre-phase/SKILL.md
+      document-phase/SKILL.md
+    references/
+      workflow/
+      standards/
+      architecture/
+      business-rules/
+    templates/
+      DEVELOPMENT_STATUS.md
+      DEVELOPMENT_STRATEGY.md
+      implementation_plan.md
+      phase_README.md
+      working_implementation_plan.md
+    settings.local.json        ← hook wiring (project-scoped)
+  project.config.json          ← project-specific values (at project root)
 ```
 
 ---

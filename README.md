@@ -2,6 +2,8 @@
 
 A reusable Claude Code control system: hooks, skills, and a reference library that work together to give Claude consistent, project-aware behavior without bloating context.
 
+**Installs per-project.** Each project gets its own `<project-root>/.claude/` with its own hooks, skills, references, and `project.config.json`. No global state, no cross-project interference.
+
 ## What It Solves
 
 - Claude doesn't read your giant CLAUDE.md reliably — it skips sections, loses context between sessions
@@ -41,7 +43,9 @@ README.md           This file
 
 ## Porting to a New Project
 
-1. Copy the `claude-controls/` folder to the new project root
+Repeat for each project that should have Claude Controls. The install is fully isolated — installing in Project B does not touch Project A.
+
+1. Copy the `claude-controls/` folder to the new project root (or clone this repo there)
 2. Tell the agent: "Read claude-controls/INSTALL.md and set up claude-controls for this project"
 3. Answer the interview questions
-4. Populate `.claude/references/` from your existing docs
+4. Populate `<project-root>/.claude/references/` from your existing docs
